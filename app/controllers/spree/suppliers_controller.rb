@@ -31,7 +31,7 @@ class Spree::SuppliersController < Spree::StoreController
 
     if @supplier.save
       flash[:success] = Spree.t('supplier_registration.create.success')
-      redirect_to spree.account_path
+      redirect_to spree.admin_products_path
     else
       render :new
     end
@@ -48,7 +48,7 @@ class Spree::SuppliersController < Spree::StoreController
   def check_if_supplier
     if spree_current_user and spree_current_user.supplier?
       flash[:error] = Spree.t('supplier_registration.already_signed_up')
-      redirect_to spree.account_path and return
+      redirect_to spree.admin_products_path and return
     end
   end
 
