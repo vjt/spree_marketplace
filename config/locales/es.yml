@@ -1,13 +1,16 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-en:
-  add_bank_account: Añadir cuenta bancaria
-    bank_accounts: Cuentas bancarias
-      new_bank_account: Nueva cuenta bancaria
-  spree:
-    admin:
-      marketplace_settings:
+--- 
+es: 
+  add_bank_account: 
+    bank_accounts: 
+      new_bank_account: "Nueva cuenta bancaria"
+  spree: 
+    supplier_signup: "Registro de proveedores"
+    name: "Nombre de la marca o la empresa"
+    admin: 
+      marketplace_settings: 
         update: 
-          success: Ajustes de marketplace actualizados con éxito.
-          contacts_first_name: Nombre
-          contacts_last_name:  Apellidos
+    contacts_first_name: "Nombre"
+    contacts_last_name: "Apellidos"
+    tax_id: "Número de identificación fiscal: CIF, NIF o equivalente"
+    success: "Ajustes de marketplace actualizados con éxito."
+    signup: "Enviar"

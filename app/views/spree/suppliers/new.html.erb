@@ -4,16 +4,19 @@
 <%= render 'spree/shared/error_messages', :target => @supplier %>
 
 <div class="col-md-6 col-md-offset-3">
-	<div class="panel panel default">
+	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h1><%= Spree.t(:supplier_signup) %></h1>
+		</div>
+		<div class="panel">
+			<%= render :partial => 'spree/signup_text' %>
 		</div>
 		<div id="new-supplier" class="panel-body" data-hook="supplier_fieldset_wrapper">
 			<%= form_for @supplier do |form| %>
 				<div data-hook="signup_inside_form">
 				<%= render :partial => 'spree/shared/supplier_form', :locals => { :form => form } %>
 				<p>
-				<%= form.submit Spree.t(:signup) %> <%= Spree.t('or') %> <%= link_to Spree.t('cancel'), spree.account_path %>
+				<%= form.submit Spree.t(:signup), :class => 'btn btn-lg btn-success btn-block' %> 
 				</p>
 			</div>
 		<% end %>
