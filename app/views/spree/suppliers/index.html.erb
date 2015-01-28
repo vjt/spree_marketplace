@@ -1,0 +1,16 @@
+<div data-hook="supplier-index">
+	<% if @suppliers.any? %>
+	<ul id="suppliers" class="inline product-listing" data-hook>
+		<% @suppliers.each do |supplier| %>
+			<div id="supplier_<%= supplier.id %>" class="col-md-3 col-sm-6 product-list-item" data-hook="supplier_list_item" itemscope itemtype="http://schema.org/supplier">
+			<div class="panel panel-default">
+				<div class="panel-body text-center product-body">
+					<%= link_to small_image(supplier), supplier_path, :itemprop => 'url' %><br/>
+					<%= link_to truncate(supplier.name, :length => 50), url, :class => 'info', :itemprop => "name", :title => supplier.name %>
+			</div>
+		</div>
+	</div>
+<% end %>
+</ul>
+<% end %>
+</div>

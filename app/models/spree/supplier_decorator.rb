@@ -3,6 +3,8 @@ Spree::Supplier.class_eval do
   attr_accessor :first_name, :last_name, :merchant_type
 
   has_many :bank_accounts, class_name: 'Spree::SupplierBankAccount'
+	has_attached_file :profile_picture, 
+		styles: { :medium => "300x300>", :thumb => "100x100" }, dependent: :destroy, 		validates_attachment_content_type: :profile_picture, content_type: /\Aimage\/.*\Z/
 
   validates :tax_id, length: { is: 9, allow_blank: true }
 
