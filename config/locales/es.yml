@@ -1,8 +1,10 @@
 --- 
 es: 
+  bank_accounts: "Cuentas bancarias"  
   add_bank_account: 
     bank_accounts: 
       new_bank_account: "Nueva cuenta bancaria"
+  
   spree: 
     supplier_signup: "Registro de proveedores"
     name: "Nombre de la marca o la empresa"
@@ -14,3 +16,4 @@ es:
     tax_id: "Número de identificación fiscal: CIF, NIF o equivalente"
     success: "Ajustes de marketplace actualizados con éxito."
     signup: "Enviar"
+  profile_picture: "Imagen de perfil"

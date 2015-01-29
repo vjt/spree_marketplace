@@ -1,8 +1,5 @@
-<!-- insert_bottom "[data-hook='supplier_details_wrapper']" -->
+<!-- insert_top "[data-hook='supplier_right_column_wrapper']" -->
 
-<fieldset class="no-border-bottom supplier-profile-picture">
-  <legend><%= I18n.t('.profile_picture') %></legend>
- <%= form_for @supplier, :url => suppliers_path, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :profile_picture %>
-<% end %> 
-</fieldset>
+<div id="admin_profile_picture">
+	<%= image_tag @supplier.profile_picture.url(:medium) %>
+</div>
