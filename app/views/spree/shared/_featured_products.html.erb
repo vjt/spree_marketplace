@@ -1,7 +1,7 @@
 <% if products.any? %>
 		<div id="featured-products" class="row">
 		 
-			<% products.where(featured: true).each do |product| %>
+			<% products.where(featured: true)[0..7].each do |product| %>
 				<% url = product_url(product, :taxon_id => @taxon.try(:id)) %>
 				
 				<div id="product_<%= product.id %>" class="col-md-3 col-sm-6 product-list-item" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
