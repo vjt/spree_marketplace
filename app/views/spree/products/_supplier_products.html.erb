@@ -1,0 +1,4 @@
+<div id="supplier-related-products">
+	<%= render :partial => 'spree/shared/products', :locals => { :products => @product.suppliers.first.products[0..3] } %>
+
+</div>

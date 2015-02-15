@@ -14,8 +14,10 @@
 			</div>
 		<div id="supplier-location">
 			<%= Spree.t(:supplier_since) + " " %><%= timeago @supplier.created_at %>
-			<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-			<%= @supplier.address.city %>
+			<% if @supplier.address %>
+				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+				<%=	@supplier.address.city %>
+			<% end %>
 		</div>
 		<div id="supplier-description" data-hook="supplier_description">
 			<%= @supplier.bio %>
