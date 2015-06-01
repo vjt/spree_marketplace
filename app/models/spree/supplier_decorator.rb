@@ -1,14 +1,14 @@
 Spree::Supplier.class_eval do
 
-  attr_accessor :first_name, :last_name, :merchant_type
-
-  has_many :bank_accounts, class_name: 'Spree::SupplierBankAccount'
+	attr_accessor :first_name, :last_name, :merchant_type
+  
+	has_many :bank_accounts, class_name: 'Spree::SupplierBankAccount'
+	has_attached_file :profile_picture, dependent: :destroy, :styles => {:medium => "300x300>", :thumb => "100x100>"}, :path => ":rails_root/public/assets/profile_pictures/:style/:filename", :url => "/assets/profile_pictures/:style/:filename"
+ validates_attachment :profile_picture, :content_type => { :content_type => /\Aimage\/.*\Z/ }, :size => { :in => 0..500.kilobytes }
 
   validates :tax_id, length: { is: 9, allow_blank: true }
 
   before_create :assign_name
-  before_create :stripe_recipient_setup
-  before_save :stripe_recipient_update
 
   private
 

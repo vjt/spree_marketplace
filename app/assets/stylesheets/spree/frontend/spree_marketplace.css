@@ -1,3 +1,10 @@
-/*
- *= require spree/frontend
-*/
+#supplier-title h1 { margin-bottom: 5px; font-size: 48px; }
+#supplier-location { padding-bottom: 20px; color: #525252;	} 
+#supplier-title { 
+										h1 {margin-bottom: 5px; font-size: 48px; } 
+										span { font-size: 18px; } 
+									}
+#supplier_profile_picture_field { padding-bottom: 30px; }
+
+#supplier-location span.glyphicon.glyphicon-map-marker { margin-left: 10px }
+#supplier_left_part { padding-left: 0px; } 

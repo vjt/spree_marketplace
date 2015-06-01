@@ -1,0 +1,31 @@
+<% @body_id = 'supplier-details' %>
+<div class="col-md-12" id="supplier-header" data-hook="supplier-header">
+	<div class="col-md-3" id="supplier_left_part" data-hook="supplier_left_part">
+		<div data-hook="supplier_left_part_wrap">
+			<div id="supplier-profile-picture" data-hook="supplier_profile_picture">
+				<%= image_tag @supplier.profile_picture.url(:medium) %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9" data-hook="supplier_right_part">
+		<div data-hook="supplier_right_part_wrap">
+			<div id="supplier-title">
+				<h1><%= @supplier.name %></h1>
+			</div>
+		<div id="supplier-location">
+			<%= Spree.t(:supplier_since) + " " %><%= timeago @supplier.created_at %>
+			<% if @supplier.address %>
+				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+				<%=	@supplier.address.city %>
+			<% end %>
+		</div>
+		<div id="supplier-description" data-hook="supplier_description">
+			<%= @supplier.bio %>
+			<div class="horizontal-line"></div>
+		</div>
+	</div>
+</div>
+<div class="col-md-12" id="supplier-product-list">
+		<%= render :partial => 'spree/suppliers/products' %>
+</div>
+

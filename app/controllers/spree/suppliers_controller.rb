@@ -3,6 +3,14 @@ class Spree::SuppliersController < Spree::StoreController
   before_filter :check_if_supplier, only: [:create, :new]
   # ssl_required
 
+	def index
+		@suppliers = Spree::Supplier.all
+	end
+
+	def show
+	  @supplier = Spree::Supplier.find(params[:id])
+	end
+
   def create
     authorize! :create, Spree::Supplier
 
@@ -31,7 +39,7 @@ class Spree::SuppliersController < Spree::StoreController
 
     if @supplier.save
       flash[:success] = Spree.t('supplier_registration.create.success')
-      redirect_to spree.account_path
+      redirect_to spree.admin_products_path
     else
       render :new
     end
@@ -48,12 +56,12 @@ class Spree::SuppliersController < Spree::StoreController
   def check_if_supplier
     if spree_current_user and spree_current_user.supplier?
       flash[:error] = Spree.t('supplier_registration.already_signed_up')
-      redirect_to spree.account_path and return
+      redirect_to spree.admin_products_path and return
     end
   end
 
   def supplier_params
-    params.require(:supplier).permit(:first_name, :name, :last_name, :tax_id)
+    params.require(:supplier).permit(:first_name, :name, :last_name, :tax_id, :profile_picture)
   end
 
 end
