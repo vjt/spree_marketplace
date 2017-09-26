@@ -4,7 +4,7 @@ group :development, :test do
   spree_branch = '2-4-stable'
   gem 'spree',                  github: 'spree/spree',                  branch: spree_branch
   gem 'spree_auth_devise',      github: 'spree/spree_auth_devise',      branch: spree_branch
-  gem 'spree_drop_ship',        :git => 'https://mohansiriga7:mohan0707@github.com/mohansiriga7/spree_drop_ship.git'
+  gem 'spree_drop_ship',        git: "https://0eef684417f181b267c314ce379ef741b7e8bd50:x-oauth-basic@github.com/mohansiriga7/spree_drop_ship.git"
   gem 'spree_digital',          github: 'halo/spree_digital',           branch: spree_branch
   gem 'spree_editor',           github: 'spree/spree_editor',           branch: spree_branch
   gem 'spree_group_pricing',    github: 'jdutil/spree_group_pricing',   branch: 'master'
