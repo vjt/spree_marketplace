@@ -52,7 +52,7 @@ module Spree
         # TODO: Want this to be inline like:
         # can [:admin, :manage], Spree::Variant, supplier_ids: user.supplier_id
         can [:admin, :create, :index], Spree::Variant
-				can [:admin, :manage], Spree::Variant do |variant|
+        can [:admin, :manage], Spree::Variant do |variant|
           variant.supplier_ids.include?(user.supplier_id)
         end
       end
