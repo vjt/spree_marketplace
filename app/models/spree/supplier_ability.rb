@@ -34,6 +34,7 @@ module Spree
         can [:admin, :manage], Spree::Product do |product|
           product.supplier_ids.include?(user.supplier_id)
         end
+        can [:admin], Spree::Stock
         can [:admin, :create, :index], Spree::Product
         # can [:admin, :manage], Spree::ProductProperty, product: { supplier_ids: user.supplier_id }
         can [:admin, :manage], Spree::ProductProperty do |property|
