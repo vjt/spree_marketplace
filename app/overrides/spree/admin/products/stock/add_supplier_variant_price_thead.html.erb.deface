@@ -1,0 +1,4 @@
+<!-- insert_before '[data-hook=admin_product_stock_management_index_rows] .stock_location_info thead th.actions' -->
+<th class="text-center">
+  Price
+</th>

@@ -1,0 +1,10 @@
+<!-- insert_before '[data-hook=admin_product_stock_management_index_rows] .stock_location_info tbody td.actions' -->
+<td class="text-center">
+  <% if (sv = item.supplier_variant) %>
+    <%= form_tag admin_supplier_variant_path(sv), class: 'set_supplier_variant_cost', method: 'PUT' do |f| %>
+      <%= text_field_tag :cost, sv.cost %>
+    <% end %>
+  <% else %>
+    N/A
+  <% end %>
+</td>
