@@ -30,13 +30,13 @@ module Spree
           end
         end
         # TODO: Want this to be inline like:
-        # can [:admin, :manage, :stock], Spree::Product, suppliers: { id: user.supplier_id }
-        can [:admin, :manage, :stock], Spree::Product do |product|
+        # can [:admin, :manage], Spree::Product, suppliers: { id: user.supplier_id }
+        can [:admin, :manage], Spree::Product do |product|
           product.supplier_ids.include?(user.supplier_id)
         end
         can [:admin, :create, :index], Spree::Product
         # can [:admin, :manage], Spree::ProductProperty, product: { supplier_ids: user.supplier_id }
-        can [:admin, :manage, :stock], Spree::ProductProperty do |property|
+        can [:admin, :manage], Spree::ProductProperty do |property|
           property.product.supplier_ids.include?(user.supplier_id)
         end
         can [:admin, :index, :read], Spree::Property
