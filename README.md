@@ -1,3 +1,8 @@
+About this fork
+===============
+
+Pleae see https://github.com/vjt/spree_drop_ship
+
 SpreeMarketplace
 ================
 
