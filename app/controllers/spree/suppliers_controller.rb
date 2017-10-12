@@ -3,13 +3,13 @@ class Spree::SuppliersController < Spree::StoreController
   before_action :check_if_supplier, only: [:create, :new]
   # ssl_required
 
-	def index
-		@suppliers = Spree::Supplier.all
-	end
+  def index
+    @suppliers = Spree::Supplier.all
+  end
 
-	def show
-	  @supplier = Spree::Supplier.find(params[:id])
-	end
+  def show
+    @supplier = Spree::Supplier.find(params[:id])
+  end
 
   def create
     authorize! :create, Spree::Supplier
