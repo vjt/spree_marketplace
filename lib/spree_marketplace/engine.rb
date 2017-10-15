@@ -15,6 +15,10 @@ module SpreeMarketplace
       SpreeMarketplace::Config = Spree::MarketplaceConfiguration.new
     end
 
+    initializer "spree_marketplace.product_searcher" do
+      Spree::Config.searcher_class = SpreeMarketplace::Searcher
+    end
+
     config.after_initialize do
       Stripe.api_key = SpreeMarketplace::Config[:stripe_secret_key]
     end
