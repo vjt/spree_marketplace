@@ -11,7 +11,7 @@ module SpreeMarketplace
       g.test_framework :rspec
     end
 
-    initializer "spree_marketplace.preferences", before: :load_config_initializers  do |app|
+    initializer "spree_marketplace.preferences", before: :load_config_initializers do
       SpreeMarketplace::Config = Spree::MarketplaceConfiguration.new
     end
 
